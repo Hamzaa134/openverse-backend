@@ -29,6 +29,6 @@ jobs:
         python -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
-        pip install Django==4.2 pytest
+        pip install Django==4.2 pytest django-cors-headers
         cd backend
         python manage.py search.test
