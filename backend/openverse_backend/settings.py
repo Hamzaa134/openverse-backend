@@ -19,7 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'your_secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,7 +86,12 @@ WSGI_APPLICATION = 'openverse_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'your_databaee',
+    }
+}
 
 
 # Password validation
@@ -121,7 +127,13 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 # Social Auth Namespace
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
+# Google OAuth2 Keys
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_secret_key'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your_secret_key'
 
+# GitHub OAuth2 Keys
+SOCIAL_AUTH_GITHUB_KEY = 'your_secret_key'
+SOCIAL_AUTH_GITHUB_SECRET = 'your_secret_key'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
