@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard - Open Media Explorer{% endblock %}
+{% block content %}
+    <main class="dashboard-main">
+      <section class="search-box">
+        <form>
+          <input type="text" placeholder="Search media..." />
+          <button>Search</button>
+        </form>
+      </section>
+
+      <section class="filter-options">
+        <h3>Filters:</h3>
+        <select id="media-type">
+          <option value="all">All Media Types</option>
+          <option value="image">Images</option>
+          <option value="audio">Audio</option>
+        </select>
+        <select id="license-filter">
+          <option value="">Any License</option>
+          <option value="public-domain-mark">Public Domain Mark</option>
+          <option value="cc0">CC0</option>
+          <option value="by">CC BY</option>
+          <option value="by-sa">CC BY-SA</option>
+          <option value="by-nd">CC BY-ND</option>
+          <option value="by-nc">CC BY-NC</option>
+          <option value="by-nc-sa">CC BY-NC-SA</option>
+          <option value="by-nc-nd">CC BY-NC-ND</option>
+        </select>
+        <button type="button" id="clear-filters">Reset Filters</button>
+      </section>
+
+      <section class="results">
+        <h2>Search Results:</h2>
+        <!-- These will be dynamically added with JS + Openverse API -->
+       
+      </section>
+    </main>
+    <script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

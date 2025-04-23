@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Open Media Explorer{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- 🔝 Reusable Navbar -->
+  <header>
+    <a href="{% url 'home' %}">
+      <h1>🌍 Open Media Explorer</h1>
+    </a>
+
+    <nav>
+      {% if user.is_authenticated %}
+        <span>Welcome, {{ user.first_name|default:user.username }} 👋</span>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'saved-searches' %}">Saved</a>
+        <a href="{% url 'logout' %}">Logout</a>
+
+
+      {% else %}
+        <a href="{% url 'register' %}">Sign Up</a>
+        <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <!-- 📦 Dynamic Content -->
+  <main class="home-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- 👣 Reusable Footer -->
+  <footer>
+    <p>© 2025 Open Media Explorer. Built with ❤️ using Django.</p>
+  </footer>
+</body>
+</html>

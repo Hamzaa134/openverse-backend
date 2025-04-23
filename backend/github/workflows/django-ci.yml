@@ -1,0 +1,37 @@
+name: Django CI
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Also trigger on pull requests targeting the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Run on the latest Ubuntu version
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout the latest code from GitHub
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9  # Use Python 3.9 for your project
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Install your app dependencies
+          pip install pytest pytest-django  # Install testing dependencies
+
+      - name: Set up database and apply migrations
+        run: |
+          python manage.py migrate  # Apply migrations to the database
+
+      - name: Run tests
+        run: |
+          pytest  # Run the tests using pytest
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - Open Media Explorer{% endblock %}
+
+{% block content %}
+<main class="home-main">
+  <section class="hero">
+    <h2>Discover Free and Open-Licensed Media</h2>
+    <p>
+      Search millions of openly licensed images, audio, and media files
+      powered by Openverse API.
+    </p>
+    <form id="home-search-form">
+      <input
+        type="text"
+        id="home-search-input"
+        placeholder="Search media like 'Nature', 'Music', etc..."
+        required
+      />
+      <button type="submit">Search Now</button>
+    </form>
+  </section>
+  <section class="results">
+    <h2>Search Results:</h2>
+    <!-- These will be dynamically added with JS + Openverse API -->
+    
+  </section>
+  <section class="features">
+    <h3>✨ Key Features</h3>
+    <ul>
+      <li>🔐 User registration and secure login</li>
+      <li>🔍 Powerful media search with filters</li>
+      <li>📁 Save and manage your search history</li>
+      <li>🎧 Display and play media directly</li>
+      <li>🚀 Built with Django + Openverse API</li>
+    </ul>
+  </section>
+</main>
+<script src="{% static 'js/home.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Open Media Explorer{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2>Login to Your Account</h2>
+  <p>Access your dashboard, view saved searches, and more!</p>
+
+  {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+      <p style="color: red;">{{ error }}</p>
+    {% endfor %}
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.username.errors }}
+    <input type="text" name="username" placeholder="Username" required value="{{ form.username.value|default:'' }}">
+
+    {{ form.password.errors }}
+    <input type="password" name="password" placeholder="Password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <div class="social-login">
+    <p>Or login with:</p>
+    <a href="{% url 'social:begin' 'google-oauth2' %}" class="social-btn google-btn">Login with Google</a>
+    <a href="{% url 'social:begin' 'github' %}" class="social-btn github-btn">Login with GitHub</a>
+  </div> 
+  
+  <p>Don't have an account yet? <a href="{% url 'register' %}">Sign up now</a></p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Saved Searches{% endblock %}
+
+{% block content %}
+<section class="saved-list-section">
+  <h2>🕘 Recent Searches</h2>
+
+  {% if searches %}
+    <ul class="saved-list">
+      {% for item in searches %}
+        <li>
+          <span>{{ item.query }}</span>
+          <form method="POST" action="{% url 'delete-search' item.id %}">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You have no saved searches yet.</p>
+  {% endif %}
+</section>
+{% endblock %}
