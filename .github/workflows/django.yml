@@ -26,7 +26,9 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        # Manually install Django and other necessary packages (replace as needed)
+        pip install Django==4.2  # Specify the required version of Django
+        pip install pytest  # Example for testing dependencies, add others as necessary
 
     - name: Run Tests
       run: |
