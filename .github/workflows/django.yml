@@ -32,5 +32,5 @@ jobs:
 
     - name: Run Tests
       run: |
-        cd E:/Office\ Work/Working/Junaid\ Shared/openverse/openverse/backend
+        cd /home/runner/work/openverse-backend/openverse-backend
         python manage.py search.test
