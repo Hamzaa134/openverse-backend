@@ -1,26 +1,2 @@
 Django==4.2
-djangorestframework==3.16.0
-django-cors-headers==4.7.0
-djangorestframework-simplejwt==5.2.2  # Add this if you're using JWT auth
-scikit-learn==1.5.1
-numpy==1.26.4
-scipy==1.11.4
-pandas==2.2.3
-matplotlib==3.10.1
-xgboost==3.0.0
-pyyaml==6.0.2
-pydantic==2.10.2
-sqlalchemy==2.0.29
-pytest==8.3.5
-pytest-django==4.11.1
-Flask==3.0.3
-Flask-Cors==5.0.0
-Flask-Limiter==3.9.2
-fastapi==0.110.2
-requests==2.31.0
-tqdm==4.66.5
-pycryptodome==3.20.0
-python-dotenv==1.1.0
-beautifulsoup4==4.12.3
-transformers==4.46.0
-sentence-transformers==3.2.1
+Requests==2.32.3

@@ -21,14 +21,21 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-
+    - name: Install Dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
     
 
     - name: Run Tests and Virtual Enviorment
       run: |
+<<<<<<< HEAD
         python -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
         pip install Django==4.2 pytest django-cors-headers
+=======
+        
+>>>>>>> bcdd39e (updated files)
         cd backend
         python manage.py search.test
