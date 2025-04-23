@@ -19,8 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b2*2!n-9-2!!&0xj1&8-#ck!a6umf-vdtazomuvm=1o6=qu-mf'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,12 +85,7 @@ WSGI_APPLICATION = 'openverse_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 
 # Password validation
@@ -127,13 +121,7 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 # Social Auth Namespace
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-# Google OAuth2 Keys
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '340733371176-grklucsc0jmct86kv7jtickm0hf18cf2.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
-# GitHub OAuth2 Keys
-SOCIAL_AUTH_GITHUB_KEY = 'Ov23liRwaGt7uZaytAkP'
-SOCIAL_AUTH_GITHUB_SECRET = '542e3f8cafb140ecd789e59bae54ebdd5a0d7a8d'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
