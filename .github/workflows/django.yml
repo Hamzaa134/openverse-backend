@@ -29,13 +29,5 @@ jobs:
 
     - name: Run Tests and Virtual Enviorment
       run: |
-<<<<<<< HEAD
-        python -m venv venv
-        source venv/bin/activate
-        pip install --upgrade pip
-        pip install Django==4.2 pytest django-cors-headers
-=======
-        
->>>>>>> bcdd39e (updated files)
         cd backend
         python manage.py search.test
