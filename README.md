@@ -1,10 +1,10 @@
-Open-License Media Search Application
-Overview
+# **Open-License Media Search Application**
+**Overview**
 The Open-License Media Search Application is a web-based platform built using Django that allows users to search, browse, and interact with openly-licensed media content. The application integrates with the Openverse API to provide users with access to a vast collection of media, including images and audio, all of which are freely available under open licenses.
 
 This application provides a robust user account management system, a rich media search interface, and follows software engineering best practices, including modularity, containerization, automated testing, and clean code practices.
 
-Features
+## **Features**
 1. User Account Management
 User Registration and Authentication: Secure user registration, login, and authentication using Django’s built-in authentication system.
 
@@ -34,7 +34,7 @@ Clean and Well-Documented Code: The application follows coding best practices, i
 
 Efficient API Integration: The Openverse API is integrated efficiently, and OAuth 2.0 or other APIs can be added for enhanced functionality.
 
-Technologies Used
+## **Technologies Used**
 Backend: Django (Python)
 
 Frontend: HTML, CSS (Bootstrap), JavaScript (for dynamic elements)
@@ -49,8 +49,8 @@ Authentication: Django’s built-in authentication system
 
 Testing: Django’s test framework
 
-Installation
-Prerequisites
+## **Installation**
+**Prerequisites**
 Before installing the application, make sure your system meets the following prerequisites:
 
 Python (version 3.12 or higher)
@@ -83,7 +83,7 @@ Once all setup steps are complete, start the development server:
 python manage.py runserver
 You can now access the application at http://127.0.0.1:8000/.
 
-Testing the Installation
+## **Testing the Installation**
 After completing the installation, test the system to ensure everything is working as expected.
 
 Run Automated Tests:
@@ -92,7 +92,7 @@ or
 python manage.py test search.tests
 
 Once the installation is complete, you can start interacting with the media search interface and explore the functionality.
-Demonstrating the System
+## **Demonstrating the System**
 1. User Account Management
 Registration: Users can sign up by providing their username, email, and password. Django handles user authentication securely.
 
@@ -108,7 +108,7 @@ Filters: Use advanced filters (type and license) to refine the search results.
 Media Display: The system displays images and audio that match the search criteria.
 
 Play Media: Users can play or view media directly within the web interface.
-Writing New Tests
+## **Writing New Tests**
 Create test files inside the tests/ folder in your app directory.
 
 Use Django’s TestCase class to write tests for your models, views, or forms.
@@ -128,7 +128,7 @@ class MediaContentTestCase(TestCase):
         self.assertEqual(media.title, "Sample Media")
         self.assertEqual(media.license_type, "Public Domain")
 
-Extending the System
+## **Extending the System**
 
 The system is designed to be extensible. To add new features:
 
@@ -138,7 +138,7 @@ Add New Models: Define new models to manage custom media content.
 
 Customize the Frontend: Modify templates in templates/.
 
-Containerization with Docker
+## **Containerization with Docker**
 The application can be containerized using Docker. This simplifies deployment and ensures that the application runs consistently across different environments.
 
 Build the Docker image:
